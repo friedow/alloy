@@ -1,6 +1,6 @@
 module github.com/grafana/alloy
 
-go 1.25.3
+go 1.25.1
 
 require (
 	cloud.google.com/go/pubsub v1.50.1
@@ -83,7 +83,7 @@ require (
 	github.com/grafana/tail v0.0.0-20230510142333-77b18831edf0
 	github.com/grafana/vmware_exporter v0.0.5-beta.0.20250218170317-73398ba08329
 	github.com/grafana/walqueue v0.0.0-20251021201828-bb0dba7569b6
-	github.com/hashicorp/consul/api v1.33.0
+	github.com/hashicorp/consul/api v1.32.1
 	github.com/hashicorp/go-discover v1.1.0
 	github.com/hashicorp/go-multierror v1.1.1
 	github.com/hashicorp/golang-lru v1.0.2
