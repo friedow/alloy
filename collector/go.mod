@@ -6,6 +6,7 @@ go 1.25.1
 
 require (
 	github.com/grafana/alloy v0.0.0-00010101000000-000000000000
+	github.com/grafana/alloy/extension/alloyengine v0.1.0
 	github.com/open-telemetry/opentelemetry-collector-contrib/connector/countconnector v0.134.0
 	github.com/open-telemetry/opentelemetry-collector-contrib/exporter/prometheusremotewriteexporter v0.130.0
 	github.com/open-telemetry/opentelemetry-collector-contrib/extension/jaegerremotesampling v0.134.0
@@ -993,6 +994,8 @@ require (
 replace github.com/grafana/alloy => ../
 
 replace github.com/grafana/alloy/syntax => ../syntax
+
+replace github.com/grafana/alloy/extension/alloyengine => ../extension/alloyengine
 
 replace github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/prometheusremotewrite => github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/prometheusremotewrite v0.130.0
 
