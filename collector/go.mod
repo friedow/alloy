@@ -326,7 +326,6 @@ require (
 	github.com/facette/natsort v0.0.0-20181210072756-2cd4dd1e2dcb // indirect
 	github.com/fatih/camelcase v1.0.0 // indirect
 	github.com/fatih/color v1.18.0 // indirect
-	github.com/felixge/fgprof v0.9.5 // indirect
 	github.com/felixge/httpsnoop v1.0.4 // indirect
 	github.com/foxboron/go-tpm-keyfiles v0.0.0-20250903184740-5d135037bd4d // indirect
 	github.com/fsnotify/fsnotify v1.9.0 // indirect
@@ -434,7 +433,6 @@ require (
 	github.com/grafana/pyroscope/lidia v0.0.0-20250716102313-506840f4afcd // indirect
 	github.com/grafana/regexp v0.0.0-20250905093917-f7b3be9d1853 // indirect
 	github.com/grafana/snowflake-prometheus-exporter v0.0.0-20251023151319-9baba332b98a // indirect
-	github.com/grafana/tail v0.0.0-20230510142333-77b18831edf0 // indirect
 	github.com/grafana/vmware_exporter v0.0.5-beta.0.20250218170317-73398ba08329 // indirect
 	github.com/grafana/walqueue v0.0.0-20251021201828-bb0dba7569b6 // indirect
 	github.com/grobie/gomemcache v0.0.0-20230213081705-239240bbc445 // indirect
@@ -762,8 +760,6 @@ require (
 	github.com/shirou/gopsutil/v4 v4.25.9 // indirect
 	github.com/shoenig/go-m1cpu v0.1.7 // indirect
 	github.com/shopspring/decimal v1.4.0 // indirect
-	github.com/shurcooL/httpfs v0.0.0-20230704072500-f1e31cf0ba5c // indirect
-	github.com/shurcooL/vfsgen v0.0.0-20230704071429-0000e147ea92 // indirect
 	github.com/sijms/go-ora/v2 v2.9.0 // indirect
 	github.com/sirupsen/logrus v1.9.3 // indirect
 	github.com/skeema/knownhosts v1.3.1 // indirect
@@ -966,7 +962,6 @@ require (
 	google.golang.org/protobuf v1.36.10 // indirect
 	gopkg.in/alecthomas/kingpin.v2 v2.2.6 // indirect
 	gopkg.in/evanphx/json-patch.v4 v4.13.0 // indirect
-	gopkg.in/fsnotify/fsnotify.v1 v1.4.7 // indirect
 	gopkg.in/inf.v0 v0.9.1 // indirect
 	gopkg.in/ini.v1 v1.67.0 // indirect
 	gopkg.in/natefinch/lumberjack.v2 v2.2.1 // indirect
@@ -991,25 +986,15 @@ require (
 	sigs.k8s.io/yaml v1.6.0 // indirect
 )
 
+replace github.com/grafana/alloy/extension/alloyengine => ../extension/alloyengine
+
 replace github.com/grafana/alloy => ../
 
 replace github.com/grafana/alloy/syntax => ../syntax
 
-replace github.com/grafana/alloy/extension/alloyengine => ../extension/alloyengine
-
-replace github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/prometheusremotewrite => github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/prometheusremotewrite v0.130.0
-
-replace github.com/open-telemetry/opentelemetry-collector-contrib/receiver/prometheusreceiver => github.com/open-telemetry/opentelemetry-collector-contrib/receiver/prometheusreceiver v0.139.1-0.20251104070254-02c05d16009d
-
-replace github.com/open-telemetry/opentelemetry-collector-contrib/exporter/prometheusremotewriteexporter => github.com/open-telemetry/opentelemetry-collector-contrib/exporter/prometheusremotewriteexporter v0.130.0
-
-replace go.opentelemetry.io/collector/exporter/exporterhelper => go.opentelemetry.io/collector/exporter/exporterhelper v0.136.0
-
-replace go.opentelemetry.io/collector/service/hostcapabilities => go.opentelemetry.io/collector/service/hostcapabilities v0.134.0
-
 replace go.opentelemetry.io/collector/featuregate => github.com/grafana/opentelemetry-collector/featuregate v0.0.0-20240325174506-2fd1623b2ca0
 
-replace github.com/fsnotify/fsnotify => github.com/fsnotify/fsnotify v1.7.0
+replace github.com/fsnotify/fsnotify v1.8.0 => github.com/fsnotify/fsnotify v1.7.0
 
 replace github.com/prometheus/prometheus => github.com/grafana/prometheus v1.8.2-0.20251030104821-c9e0b31e9aeb
 
@@ -1039,15 +1024,9 @@ replace github.com/prometheus/node_exporter => github.com/grafana/node_exporter 
 
 replace github.com/github/smimesign => github.com/grafana/smimesign v0.2.1-0.20220408144937-2a5adf3481d3
 
-replace go.opentelemetry.io/ebpf-profiler => github.com/grafana/opentelemetry-ebpf-profiler v0.0.202537-0.20250916114748-f2ff2fc6048c
-
 replace go.opentelemetry.io/obi => github.com/grafana/opentelemetry-ebpf-instrumentation v1.3.2
 
-replace github.com/opencontainers/runc => github.com/opencontainers/runc v1.2.6
-
-replace github.com/deneonet/benc => github.com/deneonet/benc v1.1.7
-
-replace sigs.k8s.io/controller-runtime => sigs.k8s.io/controller-runtime v0.20.4
+replace go.opentelemetry.io/ebpf-profiler => github.com/grafana/opentelemetry-ebpf-profiler v0.0.202537-0.20250916114748-f2ff2fc6048c
 
 replace github.com/openshift/client-go => github.com/openshift/client-go v0.0.0-20251015124057-db0dee36e235
 
@@ -1058,3 +1037,13 @@ replace go.opentelemetry.io/collector/pdata/pprofile => go.opentelemetry.io/coll
 replace go.opentelemetry.io/collector/pdata => go.opentelemetry.io/collector/pdata v1.41.0
 
 replace go.opentelemetry.io/collector/pdata/testdata => go.opentelemetry.io/collector/pdata/testdata v0.135.0
+
+replace go.opentelemetry.io/proto/slim/otlp/collector/profiles/v1development => go.opentelemetry.io/proto/slim/otlp/collector/profiles/v1development v0.0.1
+
+replace go.opentelemetry.io/proto/slim/otlp/profiles/v1development => go.opentelemetry.io/proto/slim/otlp/profiles/v1development v0.0.1
+
+replace github.com/deneonet/benc => github.com/deneonet/benc v1.1.7
+
+replace github.com/opencontainers/runc => github.com/opencontainers/runc v1.2.6
+
+replace sigs.k8s.io/controller-runtime => sigs.k8s.io/controller-runtime v0.20.4
