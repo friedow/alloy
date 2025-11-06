@@ -26,27 +26,27 @@ func main() {
 	var projectReplacesPath string
 	if len(os.Args) < 2 {
 		// Default to local file when invoked via `go generate`
-		projectReplacesPath = "project-replaces.yaml"
+		projectReplacesPath = "dependency-replacements.yaml"
 	} else {
 		projectReplacesPath = os.Args[1]
 	}
 
-	// Determine base directory for templates relative to project-replaces.yaml
+	// Determine base directory for templates relative to dependency-replacements.yaml
 	absReplacesPath, err := filepath.Abs(projectReplacesPath)
 	if err != nil {
-		log.Fatalf("Failed to resolve path to project-replaces.yaml: %v", err)
+		log.Fatalf("Failed to resolve path to dependency-replacements.yaml: %v", err)
 	}
 	baseDir := filepath.Dir(absReplacesPath)
 
-	// Read and parse project-replaces.yaml
+	// Read and parse dependency-replacements.yaml
 	var projectReplaces ProjectReplaces
 	data, err := os.ReadFile(absReplacesPath)
 	if err != nil {
-		log.Fatalf("Failed to read project-replaces.yaml: %v", err)
+		log.Fatalf("Failed to read dependency-replacements.yaml: %v", err)
 	}
 
 	if err := yaml.Unmarshal(data, &projectReplaces); err != nil {
-		log.Fatalf("Failed to parse project-replaces.yaml: %v", err)
+		log.Fatalf("Failed to parse dependency-replacements.yaml: %v", err)
 	}
 
 	// Normalize comments (handle multi-line comments with >)

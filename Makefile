@@ -48,7 +48,7 @@
 ##   generate-versioned-files  Generate versioned files.
 ##   generate-winmanifest      Generate the Windows application manifest.
 ##   generate-snmp             Generate SNMP modules from prometheus/snmp_exporter for prometheus.exporter.snmp and bumps SNMP version in _index.md.t.
-##   sync-module-dependencies  Generate replace directives from project-replaces.yaml and inject them into go.mod and builder-config.yaml.
+##   sync-module-dependencies  Generate replace directives from dependency-replacements.yaml and inject them into go.mod and builder-config.yaml.
 ##
 ## Other targets:
 ##
@@ -254,6 +254,13 @@ else
 endif
 
 sync-module-dependencies:
+ifeq ($(USE_CONTAINER),1)
+	$(RERUN_IN_CONTAINER)
+else
+	cd ./tools/sync-module-dependencies && $(GO_ENV) go generate
+endif
+
+tidy_modules:
 ifeq ($(USE_CONTAINER),1)
 	$(RERUN_IN_CONTAINER)
 else

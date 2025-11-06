@@ -12,21 +12,17 @@
 # dependency.
 
 replaces:
+  # Local module replacements for alloyengine
   - comment: Local submodule replace
     dependency: github.com/grafana/alloy/extension/alloyengine
     replacement: ../extension/alloyengine
     scope:
       - collector
 
+  # Local module replacements for alloy
   - comment: Local submodule replace
     dependency: github.com/grafana/alloy
     replacement: ../
-    scope:
-      - collector
-
-  - comment: Local submodule replace
-    dependency: github.com/grafana/alloy/syntax
-    replacement: ../syntax
     scope:
       - collector
 
@@ -36,11 +32,30 @@ replaces:
     scope:
       - extension
 
+  # Local module replacements for alloy/syntax
+  - comment: Local submodule replace
+    dependency: github.com/grafana/alloy/syntax
+    replacement: ./syntax
+    scope:
+      - alloy
+
+  - comment: Local submodule replace
+    dependency: github.com/grafana/alloy/syntax
+    replacement: ../syntax
+    scope:
+      - collector
+
   - comment: Local submodule replace
     dependency: github.com/grafana/alloy/syntax
     replacement: ../../syntax
     scope:
       - extension
+
+  - comment: xexporterhelper v0.136.0 is calling exporterhelper v0.138.0 (from collector) and causing issues
+    dependency: go.opentelemetry.io/collector/exporter/exporterhelper
+    replacement: go.opentelemetry.io/collector/exporter/exporterhelper v0.136.0
+    scope:
+      - collector
 
   - comment: >
       TODO: remove this replace directive once the upstream issue is fixed:

@@ -9,4 +9,3 @@ replaces:
   - {{ .Dependency }} => {{ .Replacement }}
 {{- end }}
   # END GENERATED REPLACES
-

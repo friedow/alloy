@@ -992,6 +992,8 @@ replace github.com/grafana/alloy => ../
 
 replace github.com/grafana/alloy/syntax => ../syntax
 
+replace go.opentelemetry.io/collector/exporter/exporterhelper => go.opentelemetry.io/collector/exporter/exporterhelper v0.136.0
+
 replace go.opentelemetry.io/collector/featuregate => github.com/grafana/opentelemetry-collector/featuregate v0.0.0-20240325174506-2fd1623b2ca0
 
 replace github.com/fsnotify/fsnotify v1.8.0 => github.com/fsnotify/fsnotify v1.7.0
