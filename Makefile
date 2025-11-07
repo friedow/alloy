@@ -180,6 +180,10 @@ test-pyroscope:
 	cd ./internal/component/pyroscope/util/internal/cmd/playground/ && \
 		$(GO_ENV) go build .
 
+.PHONY: integration-test-k8s
+integration-test-k8s: alloy-image
+	./internal/cmd/integration-tests-k8s/run.sh
+
 #
 # Targets for building binaries
 #
